@@ -24,6 +24,8 @@ struct EditorInspector: View {
         VStack(spacing: 0) {
             InspectorTabBar(selection: $tab) { $0.isAvailable }
                 .padding([.horizontal, .top])
+                // The scroll view can extend behind this row into the window's top safe area.
+                .zIndex(1)
 
             ScrollView {
                 VStack(spacing: 0) {
